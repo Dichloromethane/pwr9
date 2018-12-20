@@ -13,7 +13,7 @@
 .type store_conditional,@function
 
 fetch_add_atomic:
-	lwat %r3, %r3, 0
+	ldat %r3, %r3, 0
 	blr
 
 load_reserve:
