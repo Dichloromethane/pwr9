@@ -1,6 +1,6 @@
 .abiversion 2
 
-.include "../include/asm/macros.S"
+.include "../../include/asm/macros.S"
 
 #ifndef NUM_INSTR
 #define NUM_INSTR 5

@@ -1,3 +1,3 @@
-# Benchmarks for IBM's Power9 processor
+# Power9 stuff
 
-Just a bunch of benchmarks for all kinds of stuff
+Just a misc stuff to do with power

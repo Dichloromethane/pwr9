@@ -1,6 +1,6 @@
 .abiversion 2
 
-.include "../include/asm/macros.S"
+.include "../../include/asm/macros.S"
 
 .section ".toc"
 
@@ -28,7 +28,6 @@ ldl:
   mfpmc6 %r6
   sub %r3, %r6, %r5
   blr
-
 
 .macro lrstc_inc_eh eh
   .tfunc lrstc_inc_eh_\eh
