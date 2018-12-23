@@ -81,7 +81,7 @@ clz_loop:
   mtctr %r3
   .set i, 0
   .rept pipel*4-svsx
-    stxv i+svsx, -(i+1)*16(%sp)
+	stxv i+svsx, -(i+1)*16(%sp)
   .endr
 
   li %r4, 1
@@ -92,7 +92,7 @@ clz_loop:
 xsadddp_dr_loop:
   .set i, 1
   .rept pipel*4
-    xsadddp i, %vs0, %vs0
+	xsadddp i, %vs0, %vs0
 	.set i, i+1
   .endr
   bdnz xsadddp_dr_loop
@@ -104,6 +104,6 @@ xsadddp_dr_loop:
 
   .set i, 0
   .rept pipel*4-svsx
-    lxv i+svsx, -(i+1)*16(%sp)
+	lxv i+svsx, -(i+1)*16(%sp)
   .endr
   blr

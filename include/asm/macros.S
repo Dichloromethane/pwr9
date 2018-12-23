@@ -25,7 +25,7 @@
 	.if \globl
   		.globl \name
  	.endif
-    .type \name,@function
+	.type \name,@function
 	.align 4
 	\name:
 .endm
@@ -33,7 +33,7 @@
 .macro .tfunc name
   function \name, 1
 0:  addis 2,12,.TOC.-\name@ha
-    addi 2,2,.TOC.-\name@l
+	addi 2,2,.TOC.-\name@l
   .localentry \name,.-\name
 .endm
 
