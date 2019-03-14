@@ -51,5 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Ingnore gerenated data files
 *.dat
 a.out
