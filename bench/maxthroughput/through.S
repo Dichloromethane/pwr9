@@ -10,8 +10,6 @@
   mtctr %r3 
   li %r4, 1
   init_vsx_r_r %vs1, %r4
-  hwsync
-  isync
   mfspr %r5, 776
 .nopalign 4
 xsadddp_loop:
@@ -212,5 +210,37 @@ fused2_loop:
   mfspr %r6, 776
   sub %r5, %r6, %r5
   mulli %r3, %r3, 8*NUM_INSTR
+  double_cast_div %vs1, %r5, %r3, %vs2  
+  blr
+
+.function through_mr, 1
+  mtctr %r3 
+  mfspr %r5, 776
+.nopalign 4
+mr_loop:
+.rept NUM_INSTR
+  mr %r9, %r3
+.endr
+  bdnz mr_loop
+.nopalign 4
+  mfspr %r6, 776
+  sub %r5, %r6, %r5
+  mulli %r3, %r3, NUM_INSTR
+  double_cast_div %vs1, %r5, %r3, %vs2  
+  blr
+
+.function through_mtvsr, 1
+  mtctr %r3 
+  mfspr %r5, 776
+.nopalign 4
+mtvsr_loop:
+.rept NUM_INSTR
+  mtvsrd %vs9, %r3
+.endr
+  bdnz mtvsr_loop
+.nopalign 4
+  mfspr %r6, 776
+  sub %r5, %r6, %r5
+  mulli %r3, %r3, NUM_INSTR
   double_cast_div %vs1, %r5, %r3, %vs2  
   blr

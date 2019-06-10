@@ -73,6 +73,8 @@ mispredict_2:
 .rept NUM_INSTR
   addi %r6, %r5, 1
 .endr
+  xor %r6, %r6, %r6
+  addi %r7, %r7, 0
   mtspr 800, %r7 // assert dispatch interlock
    				 // this will prevent dispatch of the
 				 // mfpmc6 instruction until this instruction

@@ -3,7 +3,7 @@
 #include<stdint.h>
 #include<omp.h>
 
-#define N ((uint64_t) 1<<20)
+#define N ((uint64_t) 1<<30)
 
 #ifdef _OPENMP
 #define NEFF (N*omp_get_max_threads())

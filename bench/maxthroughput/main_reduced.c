@@ -23,19 +23,9 @@ double through_mtvsr(long);
 int
 main(int argc, char **argv)
 {
-  double d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12;
-  d1 = through_xsadddp(N);
-  d2 = through_xvadddp(N);
-  d3 = through_addi(N);
-  d4 = through_clzd(N);
-  d5 = through_xsadddp_dr(N);
-  d6 = through_fused(N);
-  d7 = through_li(N);
-  d8 = through_fused2(N);
-  d9 = through_ld(N);
-  d10 = through_lddr(N);
-  d11 = through_mr(N);
+  double d12;
   d12 = through_mtvsr(N);
-  printf("%8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f\n", d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12);
+  d12 = through_mtvsr(N);
+  printf("%8.3f\n", d12);
   return 0;
 }
